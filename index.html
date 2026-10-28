@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website Package Samples | Pontavia Consulting</title>
+<meta name="description" content="See the Good, Better and Best website packages side by side: the same made-up Ocala business built three ways, with live demos and what each price level includes.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="One business, three websites | Pontavia Consulting">
+<meta property="og:description" content="Click through the Good, Better and Best website packages and see what each price level buys.">
+<meta property="og:image" content="https://pontavia-consulting.github.io/pontavia-samples/renders/best-home.webp">
+<meta property="og:url" content="https://pontavia-consulting.github.io/pontavia-samples/">
+<link rel="canonical" href="https://pontavia-consulting.github.io/pontavia-samples/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<meta name="theme-color" content="#14233B">
+<style>
+@font-face { font-family: "Plus Jakarta Sans"; src: url("assets/fonts/plus-jakarta-sans-latin.woff") format("woff"); font-weight: 600 800; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/inter-latin.woff") format("woff"); font-weight: 400 700; font-display: swap; }
+:root {
+  --bg: #F5F3EE; --surface: #FFFFFF; --surface-2: #EFEBE3;
+  --navy: #14233B; --navy-2: #1E3254; --muted: #4F5F75; --line: #E2DED5;
+  --amber: #E39B2D; --amber-hover: #EDAD4E; --amber-text: #8C5410;
+  --on-navy: #F5F3EE; --on-navy-muted: #C9D2DE;
+  --good: #5B7A8C; --better: #2F5D8A; --best: #14233B;
+  --head: "Plus Jakarta Sans", system-ui, sans-serif; --body: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --wrap: 1160px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 90px; }
+body { margin: 0; background: var(--bg); color: var(--navy); font: 400 16.5px/1.7 var(--body); }
+img { max-width: 100%; display: block; }
+a { color: var(--navy); }
+h1, h2, h3 { font-family: var(--head); font-weight: 800; line-height: 1.12; margin: 0 0 .5em; letter-spacing: -0.02em; }
+h1 { font-size: clamp(40px, 6vw, 68px); }
+h2 { font-size: clamp(30px, 3.6vw, 44px); }
+h3 { font-size: 21px; letter-spacing: -0.01em; }
+p { margin: 0 0 1em; max-width: 64ch; }
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
+.wrap { width: min(100% - 32px, var(--wrap)); margin-inline: auto; }
+.muted { color: var(--muted); }
+.small { font-size: 14px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Header (matches pontaviaconsulting.com) */
+header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand img { width: 42px; height: 42px; }
+.brand-name { display: block; font: 800 18px/1.1 var(--head); letter-spacing: 2px; }
+.brand-sub { display: block; margin-top: 3px; color: var(--amber-text); font: 700 9.5px var(--head); letter-spacing: 4px; }
+.nav-links { display: flex; gap: 22px; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--muted); font-weight: 500; font-size: 15px; }
+.nav-links a:hover { color: var(--navy); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 10px; background: var(--navy); color: #fff; text-decoration: none; font: 600 15.5px/1.2 var(--body); border: 2px solid var(--navy); white-space: nowrap; cursor: pointer; }
+.btn:hover { background: var(--navy-2); border-color: var(--navy-2); }
+.btn.amber { background: var(--amber); border-color: var(--amber); color: var(--navy); }
+.btn.amber:hover { background: var(--amber-hover); border-color: var(--amber-hover); }
+.btn.line { background: transparent; color: var(--navy); }
+.btn.line:hover { background: var(--surface-2); }
+.nav-links .btn { color: #fff; }
+
+/* Hero */
+.hero { padding: 72px 0 40px; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 48px; align-items: center; }
+.hero .lede { font-size: 20px; color: var(--muted); max-width: 44ch; }
+.jump { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 28px; }
+.jump a { text-decoration: none; display: flex; flex-direction: column; padding: 12px 18px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); min-width: 130px; }
+.jump a:hover { border-color: var(--navy); }
+.jump b { font-family: var(--head); font-size: 17px; }
+.jump span { font-size: 14px; color: var(--muted); }
+
+/* Fanned browser frames: the one bold move */
+.fan { position: relative; aspect-ratio: 1.12; }
+.frame { position: absolute; width: 78%; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 60px -24px rgba(20,35,59,.45), 0 0 0 1px rgba(20,35,59,.08); transition: transform .35s ease; }
+.frame-bar { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: #E9E6DF; }
+.frame-bar i { width: 9px; height: 9px; border-radius: 50%; background: #C9C3B6; }
+.frame-bar span { margin-left: 8px; flex: 1; background: #fff; border-radius: 5px; font-size: 11px; color: var(--muted); padding: 2px 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.frame img { aspect-ratio: 1366/860; object-fit: cover; object-position: top; width: 100%; }
+.frame .chip { position: absolute; bottom: 12px; left: 12px; background: var(--navy); color: #fff; font: 700 13px var(--head); padding: 6px 12px; border-radius: 8px; }
+.f-good { top: 0; left: 0; transform: rotate(-4deg); }
+.f-better { top: 18%; left: 11%; transform: rotate(-1deg); }
+.f-best { top: 36%; left: 22%; transform: rotate(2deg); }
+.f-good .chip { background: var(--good); }
+.f-better .chip { background: var(--better); }
+.f-best .chip { background: var(--amber); color: var(--navy); }
+.fan:hover .f-good { transform: rotate(-6deg) translate(-12px, -8px); }
+.fan:hover .f-best { transform: rotate(3deg) translate(10px, 8px); }
+
+/* Explainer strip */
+.strip { padding: 28px 0 56px; }
+.strip-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.strip-grid div { padding: 22px 26px; }
+.strip-grid div + div { border-left: 1px solid var(--line); }
+.strip-grid b { display: block; font-family: var(--head); font-size: 16px; margin-bottom: 4px; }
+.strip-grid p { margin: 0; font-size: 15px; color: var(--muted); }
+
+/* Tier sections */
+.tier { padding: 84px 0; border-top: 1px solid var(--line); }
+.tier.alt { background: var(--surface-2); }
+.tier-head { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; margin-bottom: 36px; }
+.tier-name { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+.level { display: inline-flex; gap: 4px; }
+.level i { width: 26px; height: 8px; border-radius: 4px; background: var(--line); }
+.level i.on { background: var(--amber); }
+.tier-name span { font: 700 14px var(--head); color: var(--amber-text); }
+.price-box { text-align: right; }
+.price { font: 800 44px/1 var(--head); }
+.price small { font-size: 18px; font-weight: 700; color: var(--muted); }
+.price-box p { margin: 6px 0 0 auto; font-size: 14.5px; color: var(--muted); }
+.price-box .founding { color: var(--amber-text); font-weight: 600; }
+.tier-body { display: grid; grid-template-columns: 1fr 1.25fr; gap: 56px; align-items: start; }
+.best-for { font-weight: 600; font-size: 18px; margin-bottom: 14px; }
+.buys { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--amber); border-radius: 12px; padding: 20px 22px; margin: 22px 0; }
+.buys h3 { font-size: 17px; margin-bottom: 8px; }
+.buys ul { margin: 0; padding-left: 20px; }
+.buys li { margin: 4px 0; }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 18px 0 24px; }
+.facts div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; }
+.facts span { display: block; font-size: 13px; color: var(--muted); }
+.facts b { font-family: var(--head); font-size: 17px; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.shots { position: relative; }
+.desk { position: relative; }
+.desk .frame { position: static; width: 100%; transform: none; }
+.phone { position: absolute; right: -14px; bottom: -40px; width: 24%; border-radius: 22px; padding: 6px; background: var(--navy); box-shadow: 0 24px 40px -18px rgba(20,35,59,.6); }
+.phone img { border-radius: 17px; aspect-ratio: 390/844; object-fit: cover; object-position: top; }
+.thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 64px; }
+.thumb { padding: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface); cursor: zoom-in; text-align: left; font: inherit; color: inherit; }
+.thumb img { aspect-ratio: 1366/860; object-fit: cover; object-position: top; width: 100%; }
+.thumb span { display: block; padding: 10px 12px 12px; font-size: 13.5px; line-height: 1.4; }
+.thumb b { display: block; font-size: 14.5px; }
+.thumb:hover { border-color: var(--navy); }
+.thumbs.two { grid-template-columns: repeat(2, 1fr); }
+
+/* Comparison table */
+.compare { padding: 88px 0; background: var(--navy); color: var(--on-navy); }
+.compare h2 { color: #fff; }
+.compare .intro { color: var(--on-navy-muted); }
+.table-wrap { overflow-x: auto; margin-top: 32px; border-radius: 14px; background: #fff; color: var(--navy); }
+table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 15px; }
+th, td { padding: 13px 18px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: middle; }
+thead th { font: 800 17px var(--head); background: var(--surface-2); position: sticky; top: 0; }
+thead th small { display: block; font: 600 13px var(--body); color: var(--muted); }
+tbody th { font-weight: 500; width: 40%; }
+td { text-align: center; width: 20%; }
+tr.group th { background: #F8F6F1; font: 700 13px var(--head); color: var(--amber-text); letter-spacing: .02em; padding-top: 18px; }
+.yes { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--navy); color: #fff; font-size: 13px; }
+.no { color: #A7AFBA; }
+.val { font-weight: 600; }
+
+/* Why the price steps up */
+.why { padding: 88px 0; }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 32px; }
+.why-card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 26px; }
+.why-card .level { margin-bottom: 14px; }
+.why-card p { font-size: 15.5px; color: var(--muted); }
+.why-card p:last-child { margin-bottom: 0; }
+.note { margin-top: 28px; background: var(--surface); border: 1px dashed #CFC8BA; border-radius: 12px; padding: 18px 22px; font-size: 15px; color: var(--muted); }
+.note b { color: var(--navy); }
+
+/* CTA + footer */
+.cta { background: var(--navy); color: var(--on-navy); border-radius: 18px; padding: 48px; display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; }
+.cta h2 { color: #fff; margin-bottom: .2em; }
+.cta p { color: var(--on-navy-muted); margin: 0; }
+.cta .actions { justify-content: flex-end; }
+.cta .btn.line { color: #fff; border-color: #fff; }
+.cta .btn.line:hover { background: rgba(255,255,255,.1); }
+footer { padding: 48px 0 36px; font-size: 14.5px; color: var(--muted); }
+footer .wrap { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 24px; }
+footer a { color: var(--muted); }
+
+/* Lightbox */
+dialog { border: 0; padding: 0; border-radius: 14px; max-width: min(1100px, 94vw); background: var(--surface); box-shadow: 0 40px 80px rgba(0,0,0,.4); }
+dialog::backdrop { background: rgba(20,35,59,.78); }
+dialog img { width: 100%; height: auto; max-height: 78vh; object-fit: contain; background: #fff; }
+.dlg-bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 12px 16px; }
+.dlg-bar p { margin: 0; font-size: 15px; }
+.x { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: #fff; font-size: 20px; cursor: pointer; color: var(--navy); flex-shrink: 0; }
+
+@media (max-width: 960px) {
+  .hero-grid, .tier-body { grid-template-columns: 1fr; }
+  .fan { max-width: 620px; }
+  .phone { right: 8px; }
+  .cta { grid-template-columns: 1fr; }
+  .cta .actions { justify-content: flex-start; }
+  .why-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .nav-links a:not(.btn) { display: none; }
+  .brand-sub { display: none; }
+  .hero { padding-top: 44px; }
+  .jump a { flex: 1 1 0; min-width: 0; padding: 10px 12px; }
+  .strip-grid { grid-template-columns: 1fr; }
+  .strip-grid div + div { border-left: 0; border-top: 1px solid var(--line); }
+  .tier { padding: 60px 0; }
+  .tier-head { grid-template-columns: 1fr; }
+  .price-box { text-align: left; }
+  .price-box p { margin-left: 0; }
+  .facts { grid-template-columns: 1fr 1fr 1fr; }
+  .facts b { font-size: 15px; }
+  .thumbs { grid-template-columns: 1fr 1fr; margin-top: 52px; }
+  .phone { width: 30%; bottom: -30px; }
+  .cta { padding: 32px 24px; }
+  .frame-bar span { font-size: 9px; }
+  .frame .chip { font-size: 11px; padding: 4px 9px; bottom: 8px; left: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<header><div class="wrap nav">
+  <a class="brand" href="https://pontaviaconsulting.com/" aria-label="Pontavia Consulting home"><img src="assets/logo-mark.svg" alt="" width="42" height="42"><span><span class="brand-name">PONTAVIA</span><span class="brand-sub">CONSULTING</span></span></a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#good">Good</a><a href="#better">Better</a><a href="#best">Best</a><a href="#compare">Compare</a>
+    <a class="btn" href="https://schedule.pontaviaconsulting.com/mike/free-15-minute-consultation" target="_blank" rel="noopener">Book a free call</a>
+  </nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <h1>One business, three websites.</h1>
+    <p class="lede">Fern &amp; Field Garden Co. is a made-up plant nursery in Ocala. I built its website three times, once for each of my packages, so you can click through all three and see exactly what each price level buys.</p>
+    <div class="jump" aria-label="Jump to a package">
+      <a href="#good"><b>Good</b><span>$950</span></a>
+      <a href="#better"><b>Better</b><span>$1,875</span></a>
+      <a href="#best"><b>Best</b><span>from $3,100</span></a>
+    </div>
+  </div>
+  <div class="fan" aria-hidden="true">
+    <div class="frame f-good"><div class="frame-bar"><i></i><i></i><i></i><span>Good package</span></div><img src="renders/good-home.webp" alt=""><span class="chip">Good</span></div>
+    <div class="frame f-better"><div class="frame-bar"><i></i><i></i><i></i><span>Better package</span></div><img src="renders/better-home.webp" alt=""><span class="chip">Better</span></div>
+    <div class="frame f-best"><div class="frame-bar"><i></i><i></i><i></i><span>Best package</span></div><img src="renders/best-home.webp" alt=""><span class="chip">Best</span></div>
+  </div>
+</div></section>
+
+<section class="strip"><div class="wrap"><div class="strip-grid">
+  <div><b>Same business, same brand</b><p>Every version uses the same name, colors and copy, so the only thing that changes is what the site can do.</p></div>
+  <div><b>Click around, it all works</b><p>Forms, booking, the cart and checkout run in your browser. Nothing you type is sent or saved anywhere.</p></div>
+  <div><b>Every tier includes the one before</b><p>Better has everything in Good. Best has everything in Better. You only pay for the step up.</p></div>
+</div></div></section>
+
+<!-- GOOD -->
+<section class="tier" id="good" aria-labelledby="good-h"><div class="wrap">
+  <div class="tier-head">
+    <div><div class="tier-name"><span class="level" aria-hidden="true"><i class="on"></i><i></i><i></i></span><span>Package 1 of 3</span></div><h2 id="good-h">Good</h2></div>
+    <div class="price-box"><div class="price">$950</div><p>or $0 down + $99/mo</p><p class="founding">Founding clients: $760</p></div>
+  </div>
+  <div class="tier-body">
+    <div>
+      <p class="best-for">Best for a service business that needs to look professional and get the phone ringing.</p>
+      <p>A clean, fast brochure site. It tells people what you do, what it costs to get started, and how to reach you, and it looks right on a phone, which is where most local customers will find you.</p>
+      <p>The work here is in the fundamentals: a layout that leads to one action (get a quote), honest copy, and the search basics that help Google show you to people nearby.</p>
+      <div class="facts"><div><span>Pages</span><b>Up to 5</b></div><div><span>Ready in</span><b>~2 weeks</b></div><div><span>Updates</span><b>Care plan</b></div></div>
+      <div class="buys"><h3>What's included</h3><ul>
+        <li>Phone-first design in your brand</li>
+        <li>Quote request form with friendly error messages</li>
+        <li>Basic SEO: titles, descriptions, Google business data, sitemap</li>
+        <li>Click-to-call phone number, hours and address</li>
+      </ul></div>
+      <div class="actions"><a class="btn" href="https://pontavia-consulting.github.io/pontavia-sample-good/" target="_blank" rel="noopener">Open the live demo</a><a class="btn line" href="https://github.com/Pontavia-Consulting/pontavia-sample-good" target="_blank" rel="noopener">View the code</a></div>
+    </div>
+    <div class="shots">
+      <div class="desk"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>fernandfield · Good · Home</span></div><img src="renders/good-home.webp" alt="Good package home page: headline, quote button and a plant illustration" loading="lazy"></div>
+        <div class="phone"><img src="renders/good-home-m.webp" alt="Good package home page on a phone" loading="lazy"></div></div>
+      <div class="thumbs">
+        <button class="thumb" type="button" data-full="renders/good-services.webp"><img src="renders/good-services.webp" alt="" loading="lazy"><span><b>Services with prices</b>Starting prices build trust before the first call.</span></button>
+        <button class="thumb" type="button" data-full="renders/good-contact.webp"><img src="renders/good-contact.webp" alt="" loading="lazy"><span><b>Quote request form</b>Checks entries and confirms when it's sent.</span></button>
+        <button class="thumb" type="button" data-full="renders/good-home-m.webp"><img src="renders/good-home-m.webp" alt="" loading="lazy" style="aspect-ratio:1366/860;object-position:top"><span><b>Built for phones</b>Menu, buttons and text sized for thumbs.</span></button>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- BETTER -->
+<section class="tier alt" id="better" aria-labelledby="better-h"><div class="wrap">
+  <div class="tier-head">
+    <div><div class="tier-name"><span class="level" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span><span>Package 2 of 3</span></div><h2 id="better-h">Better</h2></div>
+    <div class="price-box"><div class="price">$1,875</div><p>or $199 down + $149/mo</p><p class="founding">Founding clients: $1,500</p></div>
+  </div>
+  <div class="tier-body">
+    <div>
+      <p class="best-for">Best for a business that books appointments and wants to keep its own site fresh.</p>
+      <p>Better turns the website into a tool that does work for you. Customers book a visit on their own, at a time that's actually open. You change your own text and photos without calling anyone. Your Google listing, hours and reviews sit right on the page.</p>
+      <p>It also doubles the room to tell your story: up to 10 pages for a plant library, a gallery of past jobs, an event calendar and a blog.</p>
+      <div class="facts"><div><span>Pages</span><b>Up to 10</b></div><div><span>Ready in</span><b>3–4 weeks</b></div><div><span>Updates</span><b>You, anytime</b></div></div>
+      <div class="buys"><h3>What the extra $925 buys</h3><ul>
+        <li>Online booking: pick a visit, day, time, upload photos, add to calendar</li>
+        <li>Content editor so you update text and photos yourself</li>
+        <li>Custom forms, like workshop seats and "hold this plant"</li>
+        <li>Google Business Profile setup, with live open/closed hours on the site</li>
+        <li>Searchable plant library, project gallery with before/after slider</li>
+      </ul></div>
+      <div class="actions"><a class="btn" href="https://pontavia-consulting.github.io/pontavia-sample-better/" target="_blank" rel="noopener">Open the live demo</a><a class="btn line" href="https://github.com/Pontavia-Consulting/pontavia-sample-better" target="_blank" rel="noopener">View the code</a></div>
+    </div>
+    <div class="shots">
+      <div class="desk"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>fernandfield · Better · Home</span></div><img src="renders/better-home.webp" alt="Better package home page with a seed-packet style plant of the month card and live open status" loading="lazy"></div>
+        <div class="phone"><img src="renders/better-home-m.webp" alt="Better package home page on a phone" loading="lazy"></div></div>
+      <div class="thumbs two">
+        <button class="thumb" type="button" data-full="renders/better-booking.webp"><img src="renders/better-booking.webp" alt="" loading="lazy"><span><b>Online booking</b>Four steps, real open time slots.</span></button>
+        <button class="thumb" type="button" data-full="renders/better-editor.webp"><img src="renders/better-editor.webp" alt="" loading="lazy"><span><b>Edit it yourself</b>Click any text on the page and change it.</span></button>
+        <button class="thumb" type="button" data-full="renders/better-library.webp"><img src="renders/better-library.webp" alt="" loading="lazy"><span><b>Plant library</b>Filter by type, light and native plants.</span></button>
+        <button class="thumb" type="button" data-full="renders/better-gallery.webp"><img src="renders/better-gallery.webp" alt="" loading="lazy"><span><b>Before and after</b>Drag the slider to compare a real job.</span></button>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- BEST -->
+<section class="tier" id="best" aria-labelledby="best-h"><div class="wrap">
+  <div class="tier-head">
+    <div><div class="tier-name"><span class="level" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span><span>Package 3 of 3</span></div><h2 id="best-h">Best</h2></div>
+    <div class="price-box"><div class="price"><small>from</small> $3,100</div><p>Quoted per project</p><p class="founding">Founding clients: from $2,480</p></div>
+  </div>
+  <div class="tier-body">
+    <div>
+      <p class="best-for">Best for a business that wants to sell online and run more of the day-to-day through its website.</p>
+      <p>Best adds a full online store. Customers find a plant, see live stock, pay, and pick it up the same day or get it delivered. Workshop tickets go in the same cart. Repeat customers earn rewards, and anyone with a question can ask in the chat.</p>
+      <p>Behind the scenes, this is where the website connects to the rest of the business: payments, inventory from the register, and text messages when an order is ready. That wiring is why Best is quoted per project.</p>
+      <div class="facts"><div><span>Pages</span><b>15+</b></div><div><span>Ready in</span><b>Quoted</b></div><div><span>Sells</span><b>24/7</b></div></div>
+      <div class="buys"><h3>What the step up from Better buys</h3><ul>
+        <li>Online store with filters, search, product pages and a wishlist</li>
+        <li>Cart, checkout with pickup times or delivery, and a ZIP checker</li>
+        <li>Integrations: card payments, live stock counts, "order ready" texts</li>
+        <li>Customer accounts with rewards points and order history</li>
+        <li>Custom features, like the plant finder quiz and chat</li>
+      </ul></div>
+      <div class="actions"><a class="btn" href="https://pontavia-consulting.github.io/pontavia-sample-best/" target="_blank" rel="noopener">Open the live demo</a><a class="btn line" href="https://github.com/Pontavia-Consulting/pontavia-sample-best" target="_blank" rel="noopener">View the code</a></div>
+    </div>
+    <div class="shots">
+      <div class="desk"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>fernandfield · Best · Home</span></div><img src="renders/best-home.webp" alt="Best package home page with a shoppable plant of the month and month picker" loading="lazy"></div>
+        <div class="phone"><img src="renders/best-home-m.webp" alt="Best package home page on a phone" loading="lazy"></div></div>
+      <div class="thumbs">
+        <button class="thumb" type="button" data-full="renders/best-shop.webp"><img src="renders/best-shop.webp" alt="" loading="lazy"><span><b>Online store</b>Filter by sun, water, price and stock.</span></button>
+        <button class="thumb" type="button" data-full="renders/best-cart.webp"><img src="renders/best-cart.webp" alt="" loading="lazy"><span><b>Cart</b>Plants and workshop tickets together.</span></button>
+        <button class="thumb" type="button" data-full="renders/best-checkout.webp"><img src="renders/best-checkout.webp" alt="" loading="lazy"><span><b>Checkout</b>Pickup times, delivery and rewards.</span></button>
+        <button class="thumb" type="button" data-full="renders/best-finder.webp"><img src="renders/best-finder.webp" alt="" loading="lazy"><span><b>Plant finder</b>Four questions, three good matches.</span></button>
+        <button class="thumb" type="button" data-full="renders/best-chat.webp"><img src="renders/best-chat.webp" alt="" loading="lazy"><span><b>Chat</b>Quick answers on every page.</span></button>
+        <button class="thumb" type="button" data-full="renders/best-home-m.webp"><img src="renders/best-home-m.webp" alt="" loading="lazy" style="object-position:top"><span><b>Shopping on a phone</b>The whole store works one-handed.</span></button>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- COMPARE -->
+<section class="compare" id="compare" aria-labelledby="cmp-h"><div class="wrap">
+  <h2 id="cmp-h">Side by side</h2>
+  <p class="intro">Everything each package includes, in one place.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Package comparison table">
+  <table>
+    <thead><tr><th scope="col">Feature</th><th scope="col">Good<small>$950</small></th><th scope="col">Better<small>$1,875</small></th><th scope="col">Best<small>from $3,100</small></th></tr></thead>
+    <tbody>
+      <tr class="group"><th colspan="4" scope="colgroup">The basics</th></tr>
+      <tr><th scope="row">Pages</th><td class="val">Up to 5</td><td class="val">Up to 10</td><td class="val">15+</td></tr>
+      <tr><th scope="row">Mobile-first design in your brand</th><td><span class="yes" aria-label="Included">✓</span></td><td><span class="yes" aria-label="Included">✓</span></td><td><span class="yes" aria-label="Included">✓</span></td></tr>
+      <tr><th scope="row">Contact or quote form</th><td><span class="yes" aria-label="Included">✓</span></td><td><span class="yes" aria-label="Included">✓</span></td><td><span class="yes" aria-label="Included">✓</span></td></tr>
+      <tr><th scope="row">Basic SEO and Google business data</th><td><span class="yes" aria-label="Included">✓</span></td><td><span class="yes" aria-label="Included">✓</span></td><td><span class="yes" aria-label="Included">✓</span></td></tr>
+      <tr><th scope="row">Typical timeline</th><td class="val">~2 weeks</td><td class="val">3–4 weeks</td><td class="val">Quoted</td></tr>
+      <tr class="group"><th colspan="4" scope="colgroup">Tools that save you time</th></tr>
+      <tr><th scope="row">Edit your own text and photos</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="yes" aria-label="Included">✓</span></td><td><span class="yes" aria-label="Included">✓</span></td></tr>
+      <tr><th scope="row">Online booking</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="yes" aria-label="Included">✓</span></td><td><span class="yes" aria-label="Included">✓</span></td></tr>
+      <tr><th scope="row">Custom forms (reservations, requests)</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="yes" aria-label="Included">✓</span></td><td><span class="yes" aria-label="Included">✓</span></td></tr>
+      <tr><th scope="row">Google Business Profile setup, live hours</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="yes" aria-label="Included">✓</span></td><td><span class="yes" aria-label="Included">✓</span></td></tr>
+      <tr><th scope="row">Gallery, event calendar, blog</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="yes" aria-label="Included">✓</span></td><td><span class="yes" aria-label="Included">✓</span></td></tr>
+      <tr class="group"><th colspan="4" scope="colgroup">Selling online</th></tr>
+      <tr><th scope="row">Online store, cart and checkout</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="no" aria-label="Not included">—</span></td><td><span class="yes" aria-label="Included">✓</span></td></tr>
+      <tr><th scope="row">Card payments and live stock counts</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="no" aria-label="Not included">—</span></td><td><span class="yes" aria-label="Included">✓</span></td></tr>
+      <tr><th scope="row">Pickup, delivery and ZIP checker</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="no" aria-label="Not included">—</span></td><td><span class="yes" aria-label="Included">✓</span></td></tr>
+      <tr><th scope="row">Customer accounts and rewards</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="no" aria-label="Not included">—</span></td><td><span class="yes" aria-label="Included">✓</span></td></tr>
+      <tr><th scope="row">Custom features (quiz, chat, automations)</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="no" aria-label="Not included">—</span></td><td><span class="yes" aria-label="Included">✓</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+</div></section>
+
+<!-- WHY -->
+<section class="why" aria-labelledby="why-h"><div class="wrap">
+  <h2 id="why-h">Why the price steps up</h2>
+  <p class="muted">You're not paying for more pixels. Each step adds work that has to be built, connected and tested so it keeps working when real customers use it.</p>
+  <div class="why-grid">
+    <div class="why-card"><span class="level" aria-hidden="true"><i class="on"></i><i></i><i></i></span><h3>Good pays for a solid foundation</h3><p>Design in your brand, a few pages written to win the call, and the technical basics done right: fast, secure, readable by Google.</p><p>One main job, done well.</p></div>
+    <div class="why-card"><span class="level" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span><h3>Better pays for tools that save you hours</h3><p>A booking flow that knows your schedule, an editor set up and explained so you can make your own changes, your Google profile built out, and twice the pages to plan, write and test.</p><p>Most clients earn it back by not answering the same scheduling questions all week.</p></div>
+    <div class="why-card"><span class="level" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Best pays for a second storefront</h3><p>Every product loaded with photos, prices and stock. Payments, inventory and notifications wired to the systems you already use. Checkout tested end to end, plus accounts, rewards and custom features.</p><p>Quoted per project because 15 products and 500 products are different jobs.</p></div>
+  </div>
+  <p class="note"><b>Spread it out:</b> Good and Better are also available as a monthly site plan with a 12-month minimum, which includes hosting and the Standard care plan. Every site I host is on a care plan, from $49/mo. Founding prices apply to my first 10 clients. Full details are on the <a href="https://pontaviaconsulting.com/pricing.html">pricing page</a>.</p>
+</div></section>
+
+<section aria-labelledby="cta-h"><div class="wrap">
+  <div class="cta"><div><h2 id="cta-h">Not sure which one fits?</h2><p>Book a free 15-minute call. I'll tell you honestly what you need and what you don't.</p></div>
+  <div class="actions"><a class="btn amber" href="https://schedule.pontaviaconsulting.com/mike/free-15-minute-consultation" target="_blank" rel="noopener">Book a free call</a><a class="btn line" href="tel:+18337366002">(833) 736-6002</a></div></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 Pontavia Consulting LLC · Ocala, Florida</span>
+  <span>Fern &amp; Field Garden Co. is a fictional business made for these samples. <a href="https://pontaviaconsulting.com/">pontaviaconsulting.com</a></span>
+</div></footer>
+
+<dialog id="viewer" aria-label="Larger screenshot">
+  <img src="" alt="">
+  <div class="dlg-bar"><p></p><button class="x" type="button" aria-label="Close">×</button></div>
+</dialog>
+
+<script>
+(function () {
+  var dlg = document.getElementById('viewer');
+  if (!dlg || !dlg.showModal) return;
+  var img = dlg.querySelector('img'), cap = dlg.querySelector('p');
+  document.querySelectorAll('[data-full]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      img.src = b.dataset.full;
+      var t = b.querySelector('b');
+      img.alt = t ? t.textContent : '';
+      cap.textContent = b.querySelector('span').textContent.replace(t ? t.textContent : '', (t ? t.textContent + '. ' : ''));
+      dlg.showModal();
+    });
+  });
+  dlg.querySelector('.x').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+})();
+</script>
+</body>
+</html>

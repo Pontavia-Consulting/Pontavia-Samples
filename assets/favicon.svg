@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs><linearGradient id="g" x1="20" y1="10" x2="100" y2="100" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3A5F92"/><stop offset="1" stop-color="#14233B"/></linearGradient></defs>
+  <rect width="120" height="120" rx="26" fill="#F5F3EE"/>
+  <g transform="translate(14 12) scale(0.78)">
+    <path fill-rule="evenodd" fill="url(#g)" d="M26 10 H70 C88 10 100 22 100 40 C100 58 88 70 70 70 H52 V108 H26 Z M52 30 H68 C74 30 78 34 78 40 C78 46 74 50 68 50 H52 Z"/>
+    <path d="M10 112 C26 76 60 52 116 40 C78 58 48 80 30 112 Z" fill="#FFFFFF" stroke="#E39B2D" stroke-width="5" stroke-linejoin="round"/>
+  </g>
+</svg>
