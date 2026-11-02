@@ -369,7 +369,7 @@ def build():
         'A 10-page site for a business that takes bookings and wants to keep its own content fresh. It adds online booking, a filterable plant library, a project gallery, a workshop calendar and Google Business Profile features on top of everything in Good.',
         ['index.html — home with "plant this month" card and live open/closed status', 'services.html — services and process', 'design.html — 4-step booking flow', 'plants.html — filterable plant library',
          'gallery.html — before/after slider and project lightbox', 'workshops.html — event calendar with seat reservations', 'team.html — team and story', 'journal.html — blog', 'faq.html — questions', 'contact.html — form, map, live hours'],
-        ['Everything in Good', 'Up to 10 pages', 'Content editor demo: the "Try the owner\'s editor" button shows how the owner edits text in place',
+        ['Everything in Good', 'Up to 10 pages', 'Owner\'s editor demo (a preview only; real sites are updated for you through a care plan)',
          'Online booking: 4-step visit booking with live time slots, photo upload, summary and add-to-calendar file',
          'Custom forms: workshop seat reservations, "hold this plant" requests', 'Google Business Profile features: live open/closed status, hours, map, review rating',
          'Filterable plant library with search and detail pop-ups', 'Project gallery with before/after slider and lightbox', 'Plant-of-the-month card that changes with the calendar'])
