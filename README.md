@@ -1,15 +1,15 @@
 # Pontavia Consulting — website package samples
 
-A single page comparing the three Pontavia Consulting website packages (Good, Better, Best),
+A single page comparing the three Pontavia Consulting website packages (Multi-Page, Business Site, Custom Build),
 using the same made-up business, **Fern & Field Garden Co.**, built at each level.
 
 Live page: https://pontavia-consulting.github.io/Pontavia-Samples/
 
 | Package | Live demo | Code |
 | --- | --- | --- |
-| Good ($950) | https://pontavia-consulting.github.io/Pontavia-Sample-Good/ | [Pontavia-Sample-Good](https://github.com/Pontavia-Consulting/Pontavia-Sample-Good) |
-| Better ($1,875) | https://pontavia-consulting.github.io/Pontavia-Sample-Better/ | [Pontavia-Sample-Better](https://github.com/Pontavia-Consulting/Pontavia-Sample-Better) |
-| Best (from $3,100) | https://pontavia-consulting.github.io/Pontavia-Sample-Best/ | [Pontavia-Sample-Best](https://github.com/Pontavia-Consulting/Pontavia-Sample-Best) |
+| Multi-Page ($1,500) | https://pontavia-consulting.github.io/Pontavia-Sample-Good/ | [Pontavia-Sample-Good](https://github.com/Pontavia-Consulting/Pontavia-Sample-Good) |
+| Business Site ($2,800) | https://pontavia-consulting.github.io/Pontavia-Sample-Better/ | [Pontavia-Sample-Better](https://github.com/Pontavia-Consulting/Pontavia-Sample-Better) |
+| Custom Build (from $4,500) | https://pontavia-consulting.github.io/Pontavia-Sample-Best/ | [Pontavia-Sample-Best](https://github.com/Pontavia-Consulting/Pontavia-Sample-Best) |
 
 ## Files
 

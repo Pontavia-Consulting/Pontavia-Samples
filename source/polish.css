@@ -1,0 +1,105 @@
+/* Fern & Field: polish layer (loaded after style.css on every page of every package).
+   Dramatic hero scene, glass header, deeper cards and buttons, grain, scroll reveals.
+   Everything here is progressive: without JS the pages are still complete and readable. */
+
+:root {
+  --paper: #F7F5ED;
+  --wash-2: #ECF1E5;
+  --oak: #1C3A29;
+  --ink: #14241A;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  --shadow-1: 0 1px 2px rgba(20, 36, 26, .06), 0 8px 24px rgba(20, 36, 26, .07);
+  --shadow-2: 0 2px 4px rgba(20, 36, 26, .08), 0 22px 50px rgba(20, 36, 26, .16);
+  --grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.5'/></svg>");
+}
+body { background: var(--paper); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+h1, h2, h3 { letter-spacing: -.02em; }
+::selection { background: var(--gold-2); color: var(--ink); }
+
+/* ---------- Demo bar and header ---------- */
+.demo-bar { background: linear-gradient(90deg, #0F1F16, #17301F); font-size: 13px; letter-spacing: .01em; }
+.site-head { background: rgba(247, 245, 237, .78); -webkit-backdrop-filter: blur(16px) saturate(1.4); backdrop-filter: blur(16px) saturate(1.4); border-bottom: 1px solid rgba(20, 36, 26, .08); transition: box-shadow .35s, background .35s; }
+.site-head.scrolled { box-shadow: 0 10px 34px rgba(20, 36, 26, .12); background: rgba(247, 245, 237, .92); }
+.site-head .wrap { min-height: 74px; transition: min-height .35s var(--ease); }
+.site-head.scrolled .wrap { min-height: 62px; }
+.nav a { position: relative; transition: color .25s; }
+.nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, var(--gold), var(--moss)); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease); }
+.nav a:hover::after, .nav a[aria-current="page"]::after, .nav a.active::after { transform: scaleX(1); }
+
+/* ---------- Buttons ---------- */
+.btn:not(.ghost):not(.gold) { background: linear-gradient(180deg, #2F5B42 0%, #1C3A29 100%); border-color: #1C3A29; box-shadow: 0 10px 24px rgba(28, 58, 41, .28), inset 0 1px 0 rgba(255, 255, 255, .18); transition: transform .3s var(--ease), box-shadow .3s; }
+.btn:not(.ghost):not(.gold):hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(28, 58, 41, .36), inset 0 1px 0 rgba(255, 255, 255, .22); }
+.btn.gold { background: linear-gradient(180deg, #F4CE58, #E8B21C); border-color: #E8B21C; color: #2A1E02; box-shadow: 0 10px 24px rgba(232, 178, 28, .3), inset 0 1px 0 rgba(255, 255, 255, .4); transition: transform .3s var(--ease), box-shadow .3s; }
+.btn.gold:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(232, 178, 28, .42); }
+.btn.ghost { transition: transform .3s var(--ease), background .25s, color .25s; }
+.btn.ghost:hover { transform: translateY(-2px); }
+
+/* ---------- Sections ---------- */
+.section.wash { position: relative; background: linear-gradient(180deg, #EFF3E9 0%, #E6EEDF 100%); }
+.section.wash::after { content: ""; position: absolute; inset: 0; background: var(--grain); opacity: .06; mix-blend-mode: multiply; pointer-events: none; }
+.section-head h2 { position: relative; }
+.section-head h2::before { content: ""; display: block; width: 44px; height: 3px; border-radius: 3px; margin-bottom: 18px; background: linear-gradient(90deg, var(--gold), var(--moss)); }
+.card { border-radius: 18px; border-color: rgba(20, 36, 26, .08); box-shadow: var(--shadow-1); transition: transform .4s var(--ease), box-shadow .4s; }
+.card:hover { transform: translateY(-5px); box-shadow: var(--shadow-2); }
+.plant-card { border-radius: 20px; border-color: rgba(20, 36, 26, .08); box-shadow: var(--shadow-1); transition: transform .45s var(--ease), box-shadow .45s; }
+.plant-card:hover { transform: translateY(-7px); box-shadow: var(--shadow-2); }
+.plant-card .pic { background: radial-gradient(120% 90% at 50% 18%, #FBFCF6 0%, #E6EEDC 55%, #D6E3C8 100%); overflow: hidden; }
+.plant-card .pic .art svg { transition: transform .7s var(--ease); transform-origin: 50% 90%; }
+.plant-card:hover .pic .art svg { transform: scale(1.07) translateY(-2px); }
+.plant-card h3, .card h3 { letter-spacing: -.01em; }
+.event, .hours-card, .zip-check, .ba, .map { border-radius: 20px; box-shadow: var(--shadow-1); }
+.reward-card, .cta-band { background: var(--grain), radial-gradient(700px 360px at 100% 0%, rgba(232, 178, 28, .22), transparent 60%), linear-gradient(135deg, #1C3A29 0%, #14291D 100%); background-blend-mode: soft-light, normal, normal; box-shadow: 0 30px 70px rgba(20, 36, 26, .28); }
+.quote { font-family: var(--display); }
+
+/* ---------- Dramatic hero scene ---------- */
+.hero, .packet-hero { position: relative; isolation: isolate; overflow: hidden; border-radius: 0 0 50% 50% / 0 0 54px 54px; color: #EEF3E8; padding: 96px 0 190px;
+  background:
+    radial-gradient(520px 420px at var(--mx, 78%) var(--my, 22%), rgba(247, 214, 130, .30), transparent 62%),
+    radial-gradient(820px 520px at 84% 12%, rgba(240, 196, 100, .30), transparent 62%),
+    radial-gradient(700px 520px at 4% 100%, rgba(80, 160, 110, .20), transparent 62%),
+    linear-gradient(180deg, #0E2016 0%, #15301F 52%, #1D3C2A 100%); }
+.hero::before, .packet-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--grain); mix-blend-mode: soft-light; opacity: .55; pointer-events: none; }
+.hero .wrap, .packet-hero .wrap { position: relative; z-index: 3; }
+.hero h1, .packet-hero h1 { color: #FBF8EE; font-size: clamp(42px, 6.4vw, 82px); line-height: 1.03; letter-spacing: -.03em; text-shadow: 0 2px 30px rgba(0, 0, 0, .25); }
+.hero h1 em, .packet-hero h1 em { font-style: italic; color: var(--gold-2); }
+.hero .lede, .packet-hero .lede { color: #C9D8C5; font-size: clamp(17px, 2vw, 21px); }
+.hero .muted, .packet-hero .muted, .hero .small, .packet-hero .months-label { color: #AFC3AC; }
+.hero .btn.ghost, .packet-hero .btn.ghost { color: #F4F1E4; border-color: rgba(244, 241, 228, .5); background: rgba(255, 255, 255, .05); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.hero .btn.ghost:hover, .packet-hero .btn.ghost:hover { background: #F4F1E4; color: var(--oak); }
+.hero .btn:not(.ghost):not(.gold), .packet-hero .btn:not(.ghost):not(.gold) { background: linear-gradient(180deg, #F4CE58, #E8B21C); border-color: #E8B21C; color: #2A1E02; box-shadow: 0 12px 30px rgba(232, 178, 28, .35), inset 0 1px 0 rgba(255, 255, 255, .45); }
+.packet-hero .months button { background: rgba(255, 255, 255, .07); color: #DDE8D8; border-color: rgba(255, 255, 255, .22); }
+.packet-hero .months button[aria-pressed="true"] { background: var(--gold); color: #2A1E02; border-color: var(--gold); }
+.packet-hero .hero-proof, .hero .hero-proof { color: #B9CBB5; }
+.packet-hero .hero-proof strong, .hero .hero-proof strong { color: #FBF8EE; }
+.hero-art { background: radial-gradient(90% 70% at 50% 22%, rgba(255, 244, 204, .55), rgba(255, 244, 204, 0) 70%), linear-gradient(180deg, #E9F0DD 0%, #CFDFC0 100%); box-shadow: 0 40px 80px rgba(0, 0, 0, .4), inset 0 0 0 1px rgba(255, 255, 255, .5); }
+.hero-art .sun { background: radial-gradient(circle at 35% 30%, #FFE79A, #E8B21C 70%); box-shadow: 0 0 60px 20px rgba(247, 214, 130, .55); }
+.packet { filter: drop-shadow(0 40px 60px rgba(0, 0, 0, .45)); }
+.hero-scene { position: absolute; left: 0; right: 0; bottom: -1px; height: 260px; z-index: 1; pointer-events: none; }
+.hero-scene svg { position: absolute; left: -4%; width: 108%; bottom: 0; height: 100%; will-change: transform; }
+.hero-pollen { position: absolute; inset: 0; z-index: 2; pointer-events: none; width: 100%; height: 100%; }
+.hero::after, .packet-hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 46px; z-index: 2; background: var(--paper); -webkit-mask: radial-gradient(60px 46px at 50% 100%, #000 98%, transparent) 0 0 / 120px 100% repeat-x; mask: radial-gradient(60px 46px at 50% 100%, #000 98%, transparent) 0 0 / 120px 100% repeat-x; opacity: 0; }
+
+/* page title bands on inner pages */
+.page-head, .page-hero { position: relative; background: radial-gradient(600px 260px at 90% 0%, rgba(232, 178, 28, .14), transparent 62%), linear-gradient(180deg, #EAF1E2, #F4F4EA); }
+.page-head::after, .page-hero::after { content: ""; position: absolute; inset: 0; background: var(--grain); opacity: .05; mix-blend-mode: multiply; pointer-events: none; }
+
+/* ---------- Footer ---------- */
+.site-foot { position: relative; background: var(--grain), radial-gradient(800px 300px at 100% 0%, rgba(232, 178, 28, .10), transparent 60%), linear-gradient(180deg, #14281C, #0D1A12); background-blend-mode: soft-light, normal, normal; }
+.site-foot::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), var(--moss), transparent); opacity: .8; }
+
+/* ---------- Reveals ---------- */
+.pf .pf-in { opacity: 0; transform: translate3d(0, 30px, 0); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0s); }
+.pf .pf-in.pf-show { opacity: 1; transform: none; }
+.hero .wrap > *, .packet-hero .wrap > * { animation: pf-rise 1s var(--ease) both; }
+.hero .wrap > :nth-child(2), .packet-hero .wrap > :nth-child(2) { animation-delay: .18s; }
+@keyframes pf-rise { from { opacity: 0; transform: translate3d(0, 34px, 0); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+
+@media (max-width: 860px) { .hero, .packet-hero { padding: 56px 0 150px; } .hero-scene { height: 190px; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero .wrap > *, .packet-hero .wrap > * { animation: none !important; }
+  .pf .pf-in { opacity: 1 !important; transform: none !important; }
+  .plant-card .pic .art svg { transition: none !important; }
+}
+
+.packet .btn.ghost { color: var(--oak); border-color: var(--oak); background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.packet .btn.ghost:hover { background: var(--oak); color: #fff; }

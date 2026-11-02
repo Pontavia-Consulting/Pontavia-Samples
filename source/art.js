@@ -136,15 +136,42 @@
     silver: { leaf: '#8BA597', mid: '#A9BFB2', dark: '#4C6658' },
   };
 
+  // Lighting helpers: gives every plant depth (soft shadow, light from upper left, glossy pot).
+  const shade = (hex, k) => {
+    const m = /^#?([0-9a-f]{6})$/i.exec(hex || '');
+    if (!m) return hex;
+    const n = parseInt(m[1], 16), f = (v) => Math.max(0, Math.min(255, Math.round(v * k)));
+    return '#' + [(n >> 16) & 255, (n >> 8) & 255, n & 255].map((v) => f(v).toString(16).padStart(2, '0')).join('');
+  };
+  let uid = 0;
+
   window.plantArt = function (o) {
+    const id = 'pa' + (++uid);
     const r = rng(o.seed || 7);
     const c = Object.assign({ bark: '#6B4F3A', eye: '#5A3A1A' }, palettes[o.leaf || 'green'], o.colors || {});
-    const pot = o.pot === false ? '' :
-      `<path d="M58 168 L142 168 L132 214 L68 214Z" fill="${o.potColor || '#B98C5E'}"/><rect x="52" y="160" width="96" height="14" rx="3" fill="${o.rimColor || '#A3784E'}"/>`;
-    const ground = o.pot === false ? `<ellipse cx="100" cy="206" rx="78" ry="8" fill="#24412C" opacity=".14"/>` : '';
-    const base = o.pot === false ? 204 : 164;
+    const noPot = o.pot === false;
+    const base = noPot ? 204 : 164;
+    const plant = `<g transform="translate(100 ${base})">${kinds[o.type || 'broad'](r, c)}</g>`;
+    const pc = o.potColor || '#B98C5E', rc = o.rimColor || '#A3784E';
+    const pot = noPot ? '' :
+      `<path d="M58 170 L142 170 L132 214 Q100 219 68 214Z" fill="url(#${id}p)"/>` +
+      `<path d="M62 182 H138 M65 194 H135 M67 205 H133" stroke="${shade(pc, 0.78)}" stroke-width=".9" opacity=".35"/>` +
+      `<rect x="51" y="159" width="98" height="16" rx="4" fill="url(#${id}r)"/>` +
+      `<rect x="54" y="161" width="92" height="3" rx="1.5" fill="#fff" opacity=".28"/>` +
+      `<ellipse cx="100" cy="160" rx="44" ry="5.5" fill="#3A2A1B"/>`;
+    const ground = noPot ? `<ellipse cx="100" cy="208" rx="82" ry="9" fill="url(#${id}g)"/>` :
+      `<ellipse cx="100" cy="216" rx="64" ry="7" fill="url(#${id}g)"/>`;
+    const defs = `<defs>` +
+      `<linearGradient id="${id}p" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${shade(pc, 1.12)}"/><stop offset=".5" stop-color="${pc}"/><stop offset="1" stop-color="${shade(pc, 0.7)}"/></linearGradient>` +
+      `<linearGradient id="${id}r" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${shade(rc, 1.15)}"/><stop offset="1" stop-color="${shade(rc, 0.75)}"/></linearGradient>` +
+      `<linearGradient id="${id}l" x1="0.05" y1="0" x2="0.95" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#06140b" stop-opacity=".7"/></linearGradient>` +
+      `<radialGradient id="${id}g"><stop offset="0" stop-color="#14261a" stop-opacity=".38"/><stop offset="1" stop-color="#14261a" stop-opacity="0"/></radialGradient>` +
+      `<filter id="${id}s" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2" result="b"/><feOffset in="b" dx="1.5" dy="3" result="o"/><feComponentTransfer in="o" result="sh"><feFuncA type="linear" slope=".3"/></feComponentTransfer><feMerge><feMergeNode in="sh"/><feMergeNode in="SourceGraphic"/></feMerge></filter>` +
+      `<filter id="${id}w" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0"/></filter>` +
+      `<mask id="${id}m" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="220"><g filter="url(#${id}w)">${plant}</g></mask></defs>`;
     return `<svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${o.label || 'Plant illustration'}">` +
-      ground + `<g transform="translate(100 ${base})">${kinds[o.type || 'broad'](r, c)}</g>` + pot + '</svg>';
+      defs + ground + `<g ${o.type === 'grass' ? '' : `filter="url(#${id}s)"`}>${plant}${pot}</g>` +
+      `<rect width="200" height="220" fill="url(#${id}l)" mask="url(#${id}m)" style="mix-blend-mode:soft-light"/></svg>`;
   };
 
   // Fill every <div data-plant='{"type":...}'> on the page.

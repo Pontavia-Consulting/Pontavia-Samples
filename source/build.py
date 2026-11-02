@@ -23,6 +23,8 @@ def write_site(tier, pages, css_parts, js_parts):
     css = '\n'.join(open(os.path.join(ROOT, c)).read() for c in css_parts)
     open(os.path.join(d, 'assets', 'style.css'), 'w').write(css)
     shutil.copytree(os.path.join(ROOT, 'fonts'), os.path.join(d, 'assets', 'fonts'))
+    shutil.copy(os.path.join(ROOT, 'polish.css'), os.path.join(d, 'assets', 'polish.css'))
+    shutil.copy(os.path.join(ROOT, 'polish.js'), os.path.join(d, 'assets', 'polish.js'))
     for src, dst in js_parts:
         shutil.copy(os.path.join(ROOT, src), os.path.join(d, 'assets', dst))
     open(os.path.join(d, 'assets', 'favicon.svg'), 'w').write(LOGO_SVG.replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" '))

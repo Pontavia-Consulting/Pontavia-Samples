@@ -20,7 +20,7 @@ def home():
     body = f'''
 <section class="hero"><div class="wrap">
   <div>
-    <h1>Plants that thrive in Ocala sand.</h1>
+    <h1>Plants that thrive in <em>Ocala sand.</em></h1>
     <p class="lede">Fern &amp; Field is a native plant nursery and landscape design shop in southeast Ocala. We help you plant a yard that survives August without a sprinkler running every day.</p>
     <div class="btn-row"><a class="btn" href="contact.html">Get a free quote</a><a class="btn ghost" href="services.html">See our services</a></div>
   </div>
@@ -110,7 +110,7 @@ def contact():
 
 
 def build():
-    C.README[T] = readme(T, '$950',
+    C.README[T] = readme(T, '$1,500',
         'A clean, fast, mobile-first brochure site: everything a local service business needs to look professional and get calls and quote requests.',
         ['index.html — home', 'services.html — services with starting prices', 'about.html — story and values', 'faq.html — common questions', 'contact.html — quote request form, hours, address'],
         ['5 pages, built for phones first', 'Quote request form with friendly validation', 'Basic SEO: page titles and descriptions, social share tags, LocalBusiness structured data, sitemap.xml and robots.txt',

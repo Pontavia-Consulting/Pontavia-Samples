@@ -5,7 +5,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 ORG = 'pontavia-consulting'
 SAMPLES_URL = f'https://{ORG}.github.io/Pontavia-Samples/'
 SITE_URLS = {t: f'https://{ORG}.github.io/Pontavia-Sample-{t.capitalize()}/' for t in ('good', 'better', 'best')}
-TIER_LABEL = {'good': 'Good', 'better': 'Better', 'best': 'Best'}
+TIER_LABEL = {'good': 'Multi-Page', 'better': 'Business Site', 'best': 'Custom Build'}
 
 # Load the shared data file once so static HTML and the browser use the same content.
 _js = "global.window={};require(process.argv[1]);const F=window.FF;delete F.byId;console.log(JSON.stringify(F))"
@@ -71,6 +71,7 @@ def head(title, desc, tier, page, extra=''):
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/lora.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/polish.css">
 {extra}</head>
 '''
 
@@ -175,7 +176,7 @@ def scene(pids, dusk=False):
     return f'<div class="scene{" dusk" if dusk else ""}">{inner}</div>'
 
 def tail(scripts):
-    return ''.join(f'<script src="assets/{s}" defer></script>\n' for s in scripts) + '</body>\n</html>\n'
+    return ''.join(f'<script src="assets/{s}" defer></script>\n' for s in scripts) + '<script src="assets/polish.js" defer></script>\n</body>\n</html>\n'
 
 def readme(tier, price, summary, pages, features):
     p = '\n'.join(f'- `{x}`' for x in pages)

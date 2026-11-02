@@ -171,7 +171,7 @@ def home(ctx):
     body = f'''
 <section class="packet-hero"><div class="wrap">
   <div>
-    <h1 data-edit>Plant what already wants to grow here.</h1>
+    <h1 data-edit>Plant what already <em>wants to grow here.</em></h1>
     <p class="lede" data-edit>Native plants, landscape design and honest advice for Marion County yards. Come see what's in season, or book a designer to walk your yard.</p>
     <div class="btn-row"><a class="btn" href="design.html">Book a design visit</a><a class="btn ghost" href="plants.html">Browse the plant library</a></div>
     {open_line()}
@@ -365,7 +365,7 @@ def contact(ctx):
 
 def build():
     c = BETTER
-    C.README[T] = readme(T, '$1,875',
+    C.README[T] = readme(T, '$2,800',
         'A 10-page site for a business that takes bookings and wants to keep its own content fresh. It adds online booking, a filterable plant library, a project gallery, a workshop calendar and Google Business Profile features on top of everything in Good.',
         ['index.html — home with "plant this month" card and live open/closed status', 'services.html — services and process', 'design.html — 4-step booking flow', 'plants.html — filterable plant library',
          'gallery.html — before/after slider and project lightbox', 'workshops.html — event calendar with seat reservations', 'team.html — team and story', 'journal.html — blog', 'faq.html — questions', 'contact.html — form, map, live hours'],

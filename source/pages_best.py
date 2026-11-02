@@ -73,7 +73,7 @@ def home(ctx):
     body = f'''
 <section class="packet-hero"><div class="wrap">
   <div>
-    <h1 data-edit>Plant what already wants to grow here.</h1>
+    <h1 data-edit>Plant what already <em>wants to grow here.</em></h1>
     <p class="lede" data-edit>Order natives online for pickup today or delivery anywhere in Marion County, or have a designer plan the whole yard.</p>
     <div class="btn-row"><a class="btn" href="shop.html">Shop plants</a><a class="btn ghost" href="finder.html">Take the plant finder quiz</a></div>
     {B.open_line()}
@@ -246,7 +246,7 @@ def finder(ctx):
 
 def build():
     c = BEST
-    C.README[T] = readme(T, 'from $3,100',
+    C.README[T] = readme(T, 'from $4,500',
         'A full online store and customer experience on top of everything in Better: shoppers can find, filter, buy and pick up plants, buy workshop tickets, earn rewards and get answers from a chat widget, with integrations to the point of sale.',
         ['index.html — home with interactive planting calendar', 'shop.html — store with filters, search and sort', 'product.html — product details (?id=)', 'cart.html — cart', 'checkout.html — pickup or delivery checkout',
          'account.html — orders, saved plants, rewards, care reminders', 'finder.html — plant finder quiz', 'services.html, design.html, gallery.html, workshops.html, team.html, journal.html, faq.html, contact.html — as in Better'],
