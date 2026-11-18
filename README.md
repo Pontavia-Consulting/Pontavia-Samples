@@ -1,25 +1,5 @@
-# Pontavia Consulting — website package samples
+# Moved
 
-A single page comparing the three Pontavia Consulting website packages (Multi-Page, Business Site, Custom Build),
-using the same made-up business, **Fern & Field Garden Co.**, built at each level.
+The Pontavia Consulting website package samples now live at https://pontaviaconsulting.com/samples/ (four levels: Landing Page, Multi-Page, Business Site and Custom Build).
 
-Live page: https://pontavia-consulting.github.io/Pontavia-Samples/
-
-| Package | Live demo | Code |
-| --- | --- | --- |
-| Multi-Page ($1,500) | https://pontavia-consulting.github.io/Pontavia-Sample-Good/ | [Pontavia-Sample-Good](https://github.com/Pontavia-Consulting/Pontavia-Sample-Good) |
-| Business Site ($2,800) | https://pontavia-consulting.github.io/Pontavia-Sample-Better/ | [Pontavia-Sample-Better](https://github.com/Pontavia-Consulting/Pontavia-Sample-Better) |
-| Custom Build (from $4,500) | https://pontavia-consulting.github.io/Pontavia-Sample-Best/ | [Pontavia-Sample-Best](https://github.com/Pontavia-Consulting/Pontavia-Sample-Best) |
-
-## Files
-
-- `index.html` — the whole page (styles and script inline)
-- `renders/` — WebP screenshots of the sample sites (2x, 1366×860 desktop and 390×844 phone)
-- `assets/` — Pontavia logo mark, favicon, and self-hosted fonts (Plus Jakarta Sans, Inter; SIL OFL)
-
-## Updating prices
-
-Prices and founding-client prices are written into `index.html` (hero, each package section,
-the comparison table header and the note under "Why the price steps up"). If the pricing page
-on pontaviaconsulting.com changes, update those spots to match. When the founding offer ends,
-delete the three `<p class="founding">` lines and the founding sentence in the note.
+This repository is kept only for its history. Its home page redirects to the new address.
